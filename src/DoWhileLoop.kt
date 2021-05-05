@@ -5,7 +5,7 @@ fun main(){
         println("Deve ser printado apenas uma vez")
     } while(false)
 
-    var i:Int = 0
+    var i = 0
 
     do {
         println(i)
