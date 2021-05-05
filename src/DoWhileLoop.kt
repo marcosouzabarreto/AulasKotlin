@@ -1,6 +1,5 @@
 fun main(){
 
-
     do {
         println("Deve ser printado apenas uma vez")
     } while(false)
