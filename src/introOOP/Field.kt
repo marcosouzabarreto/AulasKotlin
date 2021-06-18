@@ -1,7 +1,7 @@
 package introOOP
 class Field {
     var numero:Int = 0
-
+    var a:Float = 0f
 
         get() {
             println("Get foi chamado")
@@ -13,8 +13,8 @@ class Field {
 }
 
 fun main(){
-    val campo:Field = Field()
-    println(campo.numero)
-    campo.numero = 12
-    println(campo.numero)
+    val campo = Field()
+    println(campo.a)
+    campo.a = 12f
+    println(campo.a)
 }

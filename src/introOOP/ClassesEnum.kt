@@ -1,5 +1,4 @@
 package introOOP
-
 enum class Prioridade1 {
     BAIXA, MEDIA, ALTA
 }
