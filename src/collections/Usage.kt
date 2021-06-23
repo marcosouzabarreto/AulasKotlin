@@ -2,6 +2,7 @@ package collections
 
 data class Receita(val nome: String, val calorias: Int, val ingredientes: List<Ingredientes> = listOf())
 data class Ingredientes(val nome: String, val quantidade: Int)
+fun hasIngredient(list:List<Ingredientes>, name:String): Boolean = list.filter { it.nome == name }.any()
 
 fun main() {
 
@@ -55,4 +56,22 @@ fun main() {
        println("A posicao ${x.index + 1} é ${x.value.nome}")
     }
 
+    //Sei como fazer panqueca? e sushi?
+    val knowPancake = data.filter { it.nome == "Panqueca" }.any()
+    val knowSushi = data.filter { it.nome == "Sushi" }.any()
+
+    println("Sei panqueca? ${if (knowPancake) "sim" else "nao"} ")
+    println("Sei sushi? ${if (knowSushi) "sim" else "nao"} ")
+
+    //Quais sao as comidas com mais de 500 calorias?
+    print("as comidas com mais de 500 calorias sao: ")
+    data.filter { it.calorias > 500 }.forEach { println(it.nome) }
+
+    //Par (chave, valor) de comidas com mais de 500 calorias
+    data.filter { it.calorias > 500 }
+            .map { Pair(it.nome, it.calorias)  }
+            .forEach { println("${it.first} : ${it.second}") }
+
+    //Quais receitas possui farinha como ingrediente
+    data.filter { hasIngredient(it.ingredientes, "Farinha") }.forEach { println(it.nome) }
 }
